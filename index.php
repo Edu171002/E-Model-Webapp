@@ -14,6 +14,7 @@
                 padding: 10px 20px;
                 background-color: #555;
                 
+                
             }
             
             h1,h3{
@@ -31,9 +32,7 @@
             }
 
             .e-model{
-                max-width: 1000px;
-                min-width: 700px;
-                width: 80%;
+                width: 1000px;
                 height: auto;
             }
 
