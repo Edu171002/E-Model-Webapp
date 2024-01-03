@@ -13,8 +13,6 @@
                 justify-content: center;
                 padding: 10px 20px;
                 background-color: #555;
-                
-                
             }
             
             h1,h3{
@@ -29,6 +27,13 @@
                 text-align: center;
                 align-items: center;
                 justify-content: center;
+            }
+
+            #footer{
+                text-align: center;
+                align-items: center;
+                justify-content: center;
+                width: 100%;
             }
 
             .e-model{
@@ -241,13 +246,7 @@
                         //Cálculo de Ie-Eff
                         $Ieff = $Ie + (95 - $Ie)*($Ppl/(($Ppl/$BurstR) + $Bpl));
 
-                        // echo 'Ro, Is, Id, Ieff, A: ';
-                        // var_dump($Ro);
-                        // var_dump($Is);
-                        // var_dump($Id);
-                        // var_dump($Ieff);
-                        // var_dump($A);
-
+                        //Calculo final de R
                         $R = $Ro -$Is -$Id - $Ieff + $A;
 
                         if($R < 50) $Val = "Todos los usuarios insatisfechos";
@@ -432,5 +431,28 @@
                 </form>
             </div>
         </div>  <!-- container -->
+        <footer id="footer">
+        <p>Desarrollado para el Caso Práctido IV de RCA con los conocimientos de PHP de TAW con la Recomendación G.107 delante. 
+            &copy; Eduardo Martínez Juárez, Creative Commons Attribution Share-alike License</p>
+    </footer>
     </body>
+    
+    <script> //Script para el correcto funcionamiento del footer
+    window.addEventListener("DOMContentLoaded", function() {
+        const footer = document.getElementById("footer");
+
+        function adjustFooterPosition() {
+            const isContentFull = document.body.offsetHeight <= window.innerHeight;
+            if (isContentFull) {
+            footer.style.position = "fixed";
+            footer.style.bottom = "0";
+            } else {
+            footer.style.position = "relative";
+            }
+        }
+
+        window.addEventListener("resize", adjustFooterPosition);
+        adjustFooterPosition();
+    });   
+    </script>
 </html>
