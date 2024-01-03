@@ -433,7 +433,7 @@
         </div>  <!-- container -->
         <footer id="footer">
         <p>Desarrollado para el Caso Práctido IV de RCA con los conocimientos de PHP de TAW con la Recomendación G.107 delante. 
-            &copy; Eduardo Martínez Juárez, Creative Commons Attribution Share-alike License</p>
+            &copy; Eduardo Martínez Juárez, CC BY-NC-SA 4.0 License</p>
     </footer>
     </body>
     
