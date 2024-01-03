@@ -84,15 +84,16 @@
             }
 
             .button{
-                padding: 20px 200px;
+                padding: 15px 200px;
             }
 
-            @media (max-width: 1000px) {
+            @media (max-width: 1500px) {
                 .container{
                     flex-direction: column;
                 }
                 .result-container, .form-container{
-                    margin-right: 10px;
+                    width: 600px;
+                    gap: 20px;
                 }
             }
 
@@ -102,6 +103,17 @@
         <h1 style="color: white">Calculadora PHP del modelo E</h1>
     </header>
     <body>
+        <br>
+        <p style="text-align: justify; margin: 20px">
+            El modelo E es un método objetivo no intrusivo de evaluación de calidad de servicio que opera en base a
+            la variación de diversos parámetros de transmisión en una conversación telefónica. Es un modelo computacional ropuesto por ITU-T 
+            en la Recomendación G.107. Tiene en cuenta la degradación derivada de los retardos asociados a la bidireccionaliad de la comunicación. 
+            El resultado es un valor escalar, R, el factor de determinación de índices de transmisión, cuyo rango de utilidad va del 0
+            al 100, correspondiendo cualquier valor igual o superior a 90 a la satisfacción de los usuarios máxima; y cualquiera igual o inferior
+            a 50 a la mínima. La expresión del factor de determinación de índices de transmisión es <b>R = Ro – Is – Id – Ie-eff + A</b>, donde Ro es una
+            relación señal a ruido básica, <b>Is</b> el factor de deterioro simultáneo; <b>Id</b> el factor de deterioro de retardo; <b>Ie-eff</b> el
+            factor de deterioro de equipo efectivo dependiente de la pérdida de paquetes; y <b>A</b> el factor de mejora.
+        </p>
         <br>
         <div class="container">
         <img class="e-model" src="E.png">
@@ -200,7 +212,7 @@
                             default:
                                 $sT = 1;
                                 $mT = 100;
-                        } var_dump($DelaySensivity);
+                        }
                         //Idd
                         $X = (log10($Ta/($mT))/log10(2));
                         if($Ta > $mT) $Idd = 25*((1+$X**(6*$sT))**(1/(6*$sT)) - 3*(1 + ($X/3)**(6*$sT))**(1/(6*$sT)) + 2);
@@ -239,7 +251,15 @@
 
                         $R = $Ro -$Is -$Id - $Ieff + $A;
 
+                        if($R < 50) $Val = "Todos los usuarios insatisfechos";
+                        elseif($R > 50 && $R < 60) $Val = "La mayoría de usuarios insatisfechos";
+                        elseif($R > 60 && $R < 70) $Val = "Muchos usuarios insatisfechos";
+                        elseif($R > 70 && $R < 80) $Val = "Algunos usuarios insatisfechos";
+                        elseif($R > 80 && $R < 90) $Val = "Todos los usuarios satisfechos";
+                        elseif($R > 90) $Val = "Usuarios muy satisfechos";
+
                         echo '<h2 style="color: white">R='.$R.'</h2>';
+                        echo '<h3 style="color: white">'.$Val.'.</h2>';
                     ?> 
                 </div>
 
