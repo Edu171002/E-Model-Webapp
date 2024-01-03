@@ -114,7 +114,6 @@
             relación señal a ruido básica, <b>Is</b> el factor de deterioro simultáneo; <b>Id</b> el factor de deterioro de retardo; <b>Ie-eff</b> el
             factor de deterioro de equipo efectivo dependiente de la pérdida de paquetes; y <b>A</b> el factor de mejora.
         </p>
-        <br>
         <div class="container">
         <img class="e-model" src="E.png">
             <div class="calculator">
