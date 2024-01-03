@@ -32,7 +32,7 @@
             }
 
             .e-model{
-                width: 1000px;
+                width: 900px;
                 height: auto;
             }
 
